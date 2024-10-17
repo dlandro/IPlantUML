@@ -63,7 +63,9 @@ def plantuml_web(*file_names, **kwargs):
     """
     cmd = ["plantweb",
            "--format",
-           "auto"] + list(file_names)
+           "auto",
+           "--server",
+           "http://localhost:8080/plantuml/"] + list(file_names)
 
     return _exec_and_get_paths(cmd, file_names)
 
@@ -92,6 +94,8 @@ def plantuml(line, cell):
     use_web = not (args.jar or args.plantuml_path)
 
     uml_path = base_name + ".uml"
+    # Do not allow leading whitespace
+    cell = cell.lstrip()
     with open(uml_path, 'w') as fp:
         fp.write(cell)
 

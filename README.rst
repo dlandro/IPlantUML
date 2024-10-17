@@ -1,6 +1,12 @@
 .. image:: https://travis-ci.org/jbn/IPlantUML.svg?branch=master
     :target: https://travis-ci.org/jbn/IPlantUML
 
+Fork Changes
+===========
+- Updates to use local plantuml server instead of remote
+- Do not allow leading whitespace in cell magic
+
+
 What is it?
 ===========
 
